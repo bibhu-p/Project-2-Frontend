@@ -58,7 +58,7 @@ const Login = () => {
         if(type === 'admin'){
             router.push('/admin/dashboard')
         }else{
-          router.push('/user/view')
+          router.push('/user/dashboard')
         }
           clear()
 
@@ -71,14 +71,14 @@ const Login = () => {
     }
     return (
         <>
-            <div className="flex justify-center bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 items-center bg-slate-200 h-screen">
-                <div className=" w-auto h-[60%] shadow-md shadow-gray-600 rounded-lg mx-3 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 ">
+            <div className="flex justify-center bg-gradient-to-b from-gray-900 to-gray-600  items-center bg-slate-200 h-screen">
+                <div className=" w-auto h-[60%] shadow-md shadow-gray-400 rounded-lg mx-3 bg-white bg-clip-padding ">
                     <div className=' mt-6 flex justify-center items-center rounded-xl bg-transparent '>
-                        <span className=' text-3xl text-slate-50'> Login </span>
+                        <span className=' text-3xl text-gray-800'> Login </span>
                     </div>
                     <div className=' p-6 mt-8 justify-center items-center bg-transparent'>
                         <div className={formErr.email ? classes.inValid : classes.valid}>
-                            <FaRegUser size={15} color='white' />
+                            <FaRegUser size={15} color='' />
                             <input
                                 type={'text'}
                                 id="email"
@@ -92,7 +92,7 @@ const Login = () => {
 
                         <div className='mt-5'>
                             <div className={formErr.pwd ? classes.inValid : classes.valid}>
-                                <RiLockPasswordLine size={18} color='white' />
+                                <RiLockPasswordLine size={18} color='' />
                                 <input
                                     type={'password'}
                                     value={formValues.password}
@@ -102,13 +102,13 @@ const Login = () => {
                                     id="password" />
                             </div>
                         </div>
-                        <button className=" float-right h-6 text-gray-50 text-xs">Forgot password?</button>
+                        <button className=" float-right h-6 text-gray-800 text-xs">Forgot password?</button>
                         <div className="flex justify-center align-center mt-8 w-full ">
                             <button onClick={() => onLogin()} className='bg-gray-800 w-[6rem] ring-1 ring-gray-800 h-10 text-white rounded-md hover:bg-gray-600 hover:ring-0 flex justify-center items-center font-semibold transition ease-in-out hover:duration-300'>
                             {spinner ? <AiOutlineLoading3Quarters className='animate-spin'/> : 'Login'}
                             </button>
                         </div>
-                        <div className="mt-4 text-center text-sm text-gray-50">New User?<button onClick={() => { setShowModal(true); }} className='sm:mx-3 text-sm'>Register</button></div>
+                        <div className="mt-4 text-center text-sm text-gray-800">New User?<button onClick={() => { setShowModal(true); }} className='sm:mx-3 text-sm'>Register</button></div>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,37 @@
 const AdminDashboard = () => {
     return ( 
-        <div className=" w-screen h-screen p-3">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, amet similique nemo quisquam eius rem sapiente eum iste dicta quae, sequi, minima suscipit nisi a ipsa exercitationem vitae accusantium praesentium dignissimos ea consectetur optio nobis! Pariatur velit beatae facilis odit incidunt nisi, repudiandae harum tenetur temporibus rerum sed accusantium eveniet fuga. Temporibus vitae consequatur harum voluptates accusantium modi labore sit dae laudantium necessitatibus fugiat est. Velit suscipit quod ut ullam modi? Modi reprehenderit doloremque sequi tempora itaque nostrum pariatur officiis corrupti illum exercitationem, totam veritatis quod quasi id nesciunt, nam eveniet a porro accusantium earum soluta delectus ut rem magni! Cumque ullam nam suscipit recusandae. Tempora neque earum exercitationem magni qui necessitatibus reiciendis eius harum quas. Non officiis quam minus voluptas!</p>
-        <hr />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima odio est quae laboriosam error recusandae, perferendis suscipit tenetur earum deleniti aspernatur incidunt maiores explicabo repellat maxime delectus unde, ducimus pariatur asperiores, labore perspiciatis adipisci! Ratione non labore, aliquid a optio soluta amet mollitia facilis eius hic. Odit, facilis? Sed ratione perferendis id totam deserunt sint repellat itaque, aut ullam quasi facilis soluta vitae dolores reiciendis quisquam error, in inventore. Odio nisi praesentium molestias deserunt laborum temporibus laudantium voluptatibus eius officia autem! Autem odio, consequuntur provident iusto cupiditate delectus illum placeat eos magni consequatur illo ducimus culpa necessitatibus beatae earum blanditiis voluptatum consectetur neque?</p>
+        <div className="flex  justify-center items-baseline h-[100vh] w-[75vw]">
+            <div className=" bg-white rounded-lg p-4 w-1/4  m-4 mt-10 shadow-md">
+                <div className="border-b pb-2 flex flex-row justify-between">
+                    <span className="text-xl"> Info</span>
+                </div>
+                    <div className="grid grid-cols-1 h-16 gap-2">
+                        <div className="rounded col-span-1 my-4">
+                            <div className="mb-2">Name :  </div>
+                            <div className="mb-2">Email : </div>
+                        </div>
+                    </div>
+            </div>
+            <div className=" bg-white rounded-lg p-4 w-1/4  m-4 mt-10 shadow-md">
+                <div className="border-b pb-2 flex flex-row justify-between">
+                    <span className="text-xl"> Users Info</span>
+                </div>
+                    <div className="grid grid-cols-2 gap-2">
+                        <div className="rounded col-span-1 my-4">
+                            <div className="mb-2">No of Users : </div>
+                        </div>
+                    </div>
+            </div>
+            <div className=" bg-white rounded-lg p-4 w-1/4  m-4 mt-10 shadow-md">
+                <div className="border-b pb-2 flex flex-row justify-between">
+                    <span className="text-xl"> Vaccine Info</span>
+                </div>
+                    <div className="grid grid-cols-2 gap-2">
+                        <div className="rounded col-span-1 my-4">
+                            <div className="mb-2">No of  :  </div>
+                        </div>
+                    </div>
+            </div>
         </div>
      );
 }

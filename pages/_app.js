@@ -10,8 +10,10 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <div className='flex flex-auto'>
-        <Sidebar />
-        <div className='p-2'>
+        <div className=' fixed '>
+          <Sidebar />
+        </div>
+        <div className='p-3 mx-60'>
           <Component {...pageProps} />
 
         </div>
