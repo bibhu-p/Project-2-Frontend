@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <>
-      <div className='flex flex-auto'>
+      <div className='flex flex-auto bg-[#F7FAFC] h-screen'>
         <div className=' fixed '>
           <Sidebar />
         </div>

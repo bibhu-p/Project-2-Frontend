@@ -84,12 +84,12 @@ const Modal = (props) => {
         setSpinner(true)
         switch (props.action) {
             case 'add': {
-                let url = 'http://localhost:5000/api/user/register';
+                let url = 'http://localhost:5001/user/register';
                 axios.post(url, regFormValues)
                     .then((res) => {
                         console.log(res.data);
                         setSpinner(false)
-                        props.getData()
+                        // props.getData()
                         clear()
                         props.setShowModal(false)
                     }).catch(err => {
@@ -97,16 +97,16 @@ const Modal = (props) => {
                     })
             }
             case 'edit': {
-                let url = 'http://localhost:5000/api/user/update/' + props.userInfo._id;
+                let url = 'http://localhost:5001/user/update/' + props.userInfo._id;
                 axios.put(url, regFormValues)
                     .then((res) => {
                         console.log(res.data);
                         setSpinner(false)
-                        props.getData()
+                        props.getAllData()
                         props.setShowModal(false)
                         clear()
                     }).catch(err => {
-                        console.log('user create error--->>>', err)
+                        console.log('user Update error--->>>', err)
                     })
             }
             default: {
@@ -153,7 +153,6 @@ const Modal = (props) => {
                                                         id="email"
                                                         name="email"
                                                         autoComplete=''
-                                                        disabled={props.action === 'edit' ? true : false}
                                                         value={regFormValues.email}
                                                         onChange={(e) => { setRegFormErr({ ...regFormErr, email: false }); setRegFormValues({ ...regFormValues, email: e.target.value }) }}
                                                         className={regFormErr.email ? classes.inValid : classes.valid}
