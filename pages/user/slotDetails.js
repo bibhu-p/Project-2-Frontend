@@ -4,7 +4,7 @@ import axios from "axios";
 const SlotDetails = () => {
     const [slotData, setSlotData] = useState({})
     const [loading, setLoading] = useState(true)
-
+    const [slotDate, setSlotDate] = useState('')
 
     useEffect(() => {
         setLoading(true)
@@ -17,12 +17,13 @@ const SlotDetails = () => {
         const id = JSON.parse(localStorage.getItem('userId'));
 
         let url = 'http://localhost:5001/slot/search/' + id;
+        // console.log(url);
         await axios.get(url)
             .then((response) => {
                 // console.log(response);
-                // console.log(response.data);
                 setLoading(false)
-                setSlotData(response.data.data);
+                setSlotData(response.data.data.user.filter(ele => ele.userId === id)[0]);
+                setSlotDate(response.data.data.date);
                 // setShowSlots(true)
                 // console.log(slotData);
             })
@@ -56,7 +57,8 @@ const SlotDetails = () => {
                 </div>
                     <div className="grid grid-cols-2 gap-2">
                         <div className="rounded col-span-1 my-4">
-                            <div className="mb-2">Date  : {slotData.date} </div>
+                            <div className="mb-2">Date  : {slotDate} </div>
+                            <div className="mb-2">Status  : {slotData && slotData.length != 0 ?slotData.status ? 'Booked':'Cancelled':''} </div>
                         </div>
                     </div>
             </div>
